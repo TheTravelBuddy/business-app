@@ -63,8 +63,7 @@ const hotellistData = [
   },
 ];
 
-const HomeScreen = ({ navigation: { navigate } }) => {
-  const { user } = useAuth();
+const HomeScreen = () => {
   return (
     <Scaffold
       header={useMemo(
