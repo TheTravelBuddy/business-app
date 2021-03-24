@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Image } from "react-native";
 import { Card, useTheme } from "react-native-paper";
-import { useNavigation } from "@react-navigation/native";
+// import { useNavigation } from "@react-navigation/native";
 
 import commonStyles from "./styles";
 import RatingPill from "../RatingPill";
