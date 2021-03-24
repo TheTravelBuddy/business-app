@@ -7,7 +7,7 @@ import LoginScreen from "./screens/Login";
 import OtpScreen from "./screens/Otp";
 import SignUpScreen from "./screens/SignUp";
 
-import HomeScreen from "./screens/Home";
+import HomeScreen from "./screens/HotelOwner/Home";
 
 import { useAuth, authStates, businessTypes } from "./stores/Auth";
 import LoadingScreen from "./screens/Loading";
