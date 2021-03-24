@@ -25,7 +25,7 @@ const HotelListCard = ({
 }) => {
   const { width } = useScreenDimensions();
   const theme = useTheme();
-  const { navigate } = useNavigation();
+  // const { navigate } = useNavigation();
 
   return (
     <Card
