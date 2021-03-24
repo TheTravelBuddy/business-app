@@ -3,7 +3,6 @@ import { View } from "react-native";
 
 import styles from "../styles";
 import { Scaffold, Button, HotelListCard } from "../../components";
-import { useAuth } from "../../stores/Auth";
 
 const hotellistData = [
   {
