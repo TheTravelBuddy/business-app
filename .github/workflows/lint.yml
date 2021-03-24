@@ -30,6 +30,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           eslint: true
           eslint_dir: "src/"
-          eslint_args: "--max-warnings 0 --ignore-pattern '/src/screens/old/*'"
+          eslint_args: "--max-warnings 0 --ignore-pattern '**/old/*'"
           prettier: true
           prettier_dir: "src/"
