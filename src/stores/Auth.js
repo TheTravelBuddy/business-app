@@ -12,6 +12,12 @@ const authStates = {
   LOGGED_IN: "LOGGED_IN",
 };
 
+const businessTypes = {
+  TRAVEL_AGENCY: "TRAVEL_AGENCY",
+  HOTEL_OWNER: "HOTEL_OWNER",
+  SHOP_OWNER: "SHOP_OWNER",
+};
+
 const getAuthToken = async () => {
   if (auth().currentUser) return auth().currentUser.getIdToken(true);
 };
@@ -133,4 +139,4 @@ const useAuth = create(
   }))
 );
 
-export { authStates, useAuth };
+export { authStates, useAuth, businessTypes };

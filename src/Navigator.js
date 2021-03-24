@@ -9,7 +9,7 @@ import SignUpScreen from "./screens/SignUp";
 
 import HomeScreen from "./screens/Home";
 
-import { useAuth, authStates } from "./stores/Auth";
+import { useAuth, authStates, businessTypes } from "./stores/Auth";
 import LoadingScreen from "./screens/Loading";
 
 const AuthStack = createStackNavigator();
@@ -18,6 +18,7 @@ const AppStack = createStackNavigator();
 const Navigator = () => {
   const initAuthHandler = useAuth((state) => state.initAuthHandler);
   const authState = useAuth((state) => state.authState);
+  const user = useAuth((state) => state.user);
 
   useEffect(initAuthHandler, [initAuthHandler]);
 
@@ -36,7 +37,21 @@ const Navigator = () => {
         <SignUpScreen />
       ) : authState === authStates.LOGGED_IN ? (
         <AppStack.Navigator headerMode="none">
-          <AuthStack.Screen name="HomeScreen" component={HomeScreen} />
+          {user?.businessType === businessTypes.TRAVEL_AGENCY ? (
+            <>
+              <AuthStack.Screen name="HomeScreen" component={HomeScreen} />
+            </>
+          ) : user?.businessType === businessTypes.HOTEL_OWNER ? (
+            <>
+              <AuthStack.Screen name="HomeScreen" component={HomeScreen} />
+            </>
+          ) : user?.businessType === businessTypes.SHOP_OWNER ? (
+            <>
+              <AuthStack.Screen name="HomeScreen" component={HomeScreen} />
+            </>
+          ) : (
+            <LoadingScreen />
+          )}
         </AppStack.Navigator>
       ) : (
         <LoadingScreen />
