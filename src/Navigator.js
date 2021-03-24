@@ -8,6 +8,7 @@ import OtpScreen from "./screens/Otp";
 import SignUpScreen from "./screens/SignUp";
 
 import HomeScreen from "./screens/HotelOwner/Home";
+import NotificationScreen from "./screens/HotelOwner/Notification";
 
 import { useAuth, authStates, businessTypes } from "./stores/Auth";
 import LoadingScreen from "./screens/Loading";
@@ -44,6 +45,10 @@ const Navigator = () => {
           ) : user?.businessType === businessTypes.HOTEL_OWNER ? (
             <>
               <AuthStack.Screen name="HomeScreen" component={HomeScreen} />
+              <AuthStack.Screen
+                name="NotificationScreen"
+                component={NotificationScreen}
+              />
             </>
           ) : user?.businessType === businessTypes.SHOP_OWNER ? (
             <>

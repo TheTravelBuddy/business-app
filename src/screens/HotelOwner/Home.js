@@ -62,7 +62,7 @@ const hotellistData = [
   },
 ];
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation: { navigate } }) => {
   return (
     <Scaffold
       header={useMemo(
@@ -71,7 +71,7 @@ const HomeScreen = () => {
           actions: [
             {
               icon: "bell-outline",
-              // onPress: () => navigate("EditProfileScreen"),
+              onPress: () => navigate("NotificationScreen"),
             },
             {
               icon: "account-outline",
@@ -79,7 +79,7 @@ const HomeScreen = () => {
             },
           ],
         }),
-        []
+        [navigate]
       )}
     >
       <View style={styles.Section}>
