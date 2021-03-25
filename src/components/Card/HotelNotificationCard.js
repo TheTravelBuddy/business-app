@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { View, Image } from "react-native";
 import { Card, Divider, useTheme, Text } from "react-native-paper";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import { useNavigation } from "@react-navigation/native";
 
 import commonStyles from "./styles";
 import RatingPill from "../RatingPill";
@@ -16,6 +17,7 @@ import CardSubtitle from "../Typography/CardSubtitle";
 import { displayFilter } from "../../stores/BookingFilters";
 
 const HotelNotificationCard = ({
+  id,
   coverUri,
   name,
   rating,
@@ -29,9 +31,18 @@ const HotelNotificationCard = ({
 }) => {
   const { width } = useScreenDimensions();
   const theme = useTheme();
+  const { navigate } = useNavigation();
+
+  const goToHotelConfirmDetail = useCallback(() => {
+    navigate("HotelBookingConfirmScreen", { hotelId: id });
+  }, [id, navigate]);
 
   return (
-    <Card style={[{ width: width - 2 * SCREEN_PADDING }, style]} {...props}>
+    <Card
+      style={[{ width: width - 2 * SCREEN_PADDING }, style]}
+      onPress={goToHotelConfirmDetail}
+      {...props}
+    >
       <View style={commonStyles.CardContainer}>
         <View style={styles.CardContent}>
           <Image

@@ -71,7 +71,7 @@ const HomeScreen = ({ navigation: { navigate } }) => {
           actions: [
             {
               icon: "bell-outline",
-              onPress: () => navigate("NotificationScreen"),
+              onPress: () => navigate("HotelNotificationScreen"),
             },
             {
               icon: "account-outline",

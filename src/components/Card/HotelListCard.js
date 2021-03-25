@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { View, Image } from "react-native";
 import { Card, useTheme } from "react-native-paper";
-// import { useNavigation } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 
 import commonStyles from "./styles";
 import RatingPill from "../RatingPill";
@@ -13,6 +13,7 @@ import useScreenDimensions from "../../hooks/useScreenDimensions";
 import { CARD_SPACING, SCREEN_PADDING } from "../../constants";
 
 const HotelListCard = ({
+  id,
   coverUri,
   name,
   rating,
@@ -25,7 +26,11 @@ const HotelListCard = ({
 }) => {
   const { width } = useScreenDimensions();
   const theme = useTheme();
-  // const { navigate } = useNavigation();
+  const { navigate } = useNavigation();
+
+  const goToHotelListDetail = useCallback(() => {
+    navigate("HotelListDetailsScreen", { hotelId: id });
+  }, [id, navigate]);
 
   return (
     <Card
@@ -33,6 +38,7 @@ const HotelListCard = ({
         { width: width - 2 * SCREEN_PADDING, padding: CARD_SPACING },
         style,
       ]}
+      onPress={goToHotelListDetail}
       {...props}
     >
       <View style={styles.CardContent}>
