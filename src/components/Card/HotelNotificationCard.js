@@ -34,7 +34,7 @@ const HotelNotificationCard = ({
   const { navigate } = useNavigation();
 
   const goToHotelConfirmDetail = useCallback(() => {
-    navigate("HotelBookingConfirmScreen", { hotelId: id });
+    navigate("HotelBookingScreen", { hotelId: id });
   }, [id, navigate]);
 
   return (

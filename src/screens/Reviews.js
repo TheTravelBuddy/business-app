@@ -1,9 +1,9 @@
 import React, { useMemo } from "react";
 import { View } from "react-native";
 
-import commonStyles from "../styles";
+import commonStyles from "./styles";
 
-import { Scaffold, ReviewCard } from "../../components";
+import { Scaffold, ReviewCard } from "../components";
 
 const reviews = [
   {

@@ -29,7 +29,7 @@ const HotelListCard = ({
   const { navigate } = useNavigation();
 
   const goToHotelListDetail = useCallback(() => {
-    navigate("HotelListDetailsScreen", { hotelId: id });
+    navigate("HotelDetailsScreen", { hotelId: id });
   }, [id, navigate]);
 
   return (

@@ -62,7 +62,7 @@ const hotellistData = [
   },
 ];
 
-const HomeScreen = ({ navigation: { navigate } }) => {
+const HotelOwnerHomeScreen = ({ navigation: { navigate } }) => {
   return (
     <Scaffold
       header={useMemo(
@@ -71,7 +71,7 @@ const HomeScreen = ({ navigation: { navigate } }) => {
           actions: [
             {
               icon: "bell-outline",
-              onPress: () => navigate("HotelNotificationScreen"),
+              onPress: () => navigate("HotelOwnerNotificationScreen"),
             },
             {
               icon: "account-outline",
@@ -88,6 +88,9 @@ const HomeScreen = ({ navigation: { navigate } }) => {
           icon="plus"
           style={styles.ScreenPadded}
           theme={{ colors: { primary: "white" } }}
+          onPress={() => {
+            navigate("AddHotelScreen");
+          }}
         >
           Add a hotel
         </Button>
@@ -105,4 +108,4 @@ const HomeScreen = ({ navigation: { navigate } }) => {
   );
 };
 
-export default HomeScreen;
+export default HotelOwnerHomeScreen;

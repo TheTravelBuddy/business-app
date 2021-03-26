@@ -98,7 +98,9 @@ const HotelListDetailsScreen = ({ navigation: { goBack, navigate } }) => {
             mode="contained"
             icon="pencil-outline"
             theme={whiteButtonTheme}
-            // onPress: () => navigate("EditHotelScreen"),
+            onPress={() => {
+              navigate("EditHotelScreen");
+            }}
           />
         </>
         <View style={[screenStyles.Section]}>

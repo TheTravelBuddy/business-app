@@ -43,7 +43,7 @@ const hotelnotificationData = [
   },
 ];
 
-const HotelNotificationScreen = ({ navigation: { goBack } }) => {
+const HotelOwnerNotificationScreen = ({ navigation: { goBack } }) => {
   return (
     <Scaffold
       header={useMemo(() => ({ title: "Notifications", backAction: goBack }), [
@@ -63,4 +63,4 @@ const HotelNotificationScreen = ({ navigation: { goBack } }) => {
   );
 };
 
-export default HotelNotificationScreen;
+export default HotelOwnerNotificationScreen;
