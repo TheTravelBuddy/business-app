@@ -61,6 +61,8 @@ import AboutAgencyModal from "./Modals/AboutAgencyModal";
 import WriteReviewModal from "./Modals/WriteReviewModal";
 import WriteCommentModal from "./Modals/WriteCommentModal";
 import RenderOnLoad from "./RenderOnLoad";
+import HotelListCard from "./Card/HotelListCard";
+import HotelNotificationCard from "./Card/HotelNotificationCard";
 
 export {
   Appbar,
@@ -126,4 +128,6 @@ export {
   WriteCommentModal,
   WriteReviewModal,
   RenderOnLoad,
+  HotelListCard,
+  HotelNotificationCard,
 };

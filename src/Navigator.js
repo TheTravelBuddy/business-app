@@ -6,8 +6,14 @@ import OnBoardingScreen from "./screens/OnBoarding";
 import LoginScreen from "./screens/Login";
 import OtpScreen from "./screens/Otp";
 import SignUpScreen from "./screens/SignUp";
+import ReviewsScreen from "./screens/Reviews";
 
-import HomeScreen from "./screens/Home";
+import HotelOwnerHomeScreen from "./screens/HotelOwner/Home";
+import HotelOwnerNotificationScreen from "./screens/HotelOwner/Notification";
+import HotelBookingScreen from "./screens/HotelOwner/HotelBooking";
+import HotelDetailsScreen from "./screens/HotelOwner/HotelDetails";
+import AddHotelScreen from "./screens/HotelOwner/AddHotel";
+import EditHotelScreen from "./screens/HotelOwner/EditHotel";
 
 import { useAuth, authStates, businessTypes } from "./stores/Auth";
 import LoadingScreen from "./screens/Loading";
@@ -39,19 +45,49 @@ const Navigator = () => {
         <AppStack.Navigator headerMode="none">
           {user?.businessType === businessTypes.TRAVEL_AGENCY ? (
             <>
-              <AuthStack.Screen name="HomeScreen" component={HomeScreen} />
+              <AuthStack.Screen
+                name="HotelOwnerHomeScreen"
+                component={HotelOwnerHomeScreen}
+              />
             </>
           ) : user?.businessType === businessTypes.HOTEL_OWNER ? (
             <>
-              <AuthStack.Screen name="HomeScreen" component={HomeScreen} />
+              <AuthStack.Screen
+                name="HomeScreen"
+                component={HotelOwnerHomeScreen}
+              />
+              <AuthStack.Screen
+                name="HotelOwnerNotificationScreen"
+                component={HotelOwnerNotificationScreen}
+              />
+              <AuthStack.Screen
+                name="HotelBookingScreen"
+                component={HotelBookingScreen}
+              />
+              <AuthStack.Screen
+                name="HotelDetailsScreen"
+                component={HotelDetailsScreen}
+              />
+              <AuthStack.Screen
+                name="AddHotelScreen"
+                component={AddHotelScreen}
+              />
+              <AuthStack.Screen
+                name="EditHotelScreen"
+                component={EditHotelScreen}
+              />
             </>
           ) : user?.businessType === businessTypes.SHOP_OWNER ? (
             <>
-              <AuthStack.Screen name="HomeScreen" component={HomeScreen} />
+              <AuthStack.Screen
+                name="HomeScreen"
+                component={HotelOwnerHomeScreen}
+              />
             </>
           ) : (
             <LoadingScreen />
           )}
+          <AuthStack.Screen name="ReviewsScreen" component={ReviewsScreen} />
         </AppStack.Navigator>
       ) : (
         <LoadingScreen />
