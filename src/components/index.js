@@ -52,6 +52,7 @@ import CommentCard from "./Card/CommentCard";
 import BlogSearchCard from "./Card/BlogSearchCard";
 import BusinessSearchCard from "./Card/BusinessSearchCard";
 import ServiceSearchCard from "./Card/ServiceSearchCard";
+import ShopListCard from "./Card/ShopListCard";
 import Chip from "./Chip";
 import BookingFiltersModal from "./Modals/BookingFiltersModal";
 import BookingTypeModal from "./Modals/BookingTypeModal";
@@ -116,6 +117,7 @@ export {
   BusinessSearchCard,
   HotelBookingCard,
   ServiceSearchCard,
+  ShopListCard,
   Chip,
   ModalTitle,
   BookingFiltersModal,
