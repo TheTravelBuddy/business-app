@@ -6,8 +6,12 @@ import OnBoardingScreen from "./screens/OnBoarding";
 import LoginScreen from "./screens/Login";
 import OtpScreen from "./screens/Otp";
 import SignUpScreen from "./screens/SignUp";
+import ReviewsScreen from "./screens/Reviews";
 
-import HomeScreen from "./screens/Home";
+import ShopOwnerHomeScreen from "./screens/ShopOwner/Home";
+import ShopDetailsScreen from "./screens/ShopOwner/ShopDetails";
+import AddShopScreen from "./screens/ShopOwner/AddShop";
+import EditShopScreen from "./screens/ShopOwner/EditShop";
 
 import { useAuth, authStates, businessTypes } from "./stores/Auth";
 import LoadingScreen from "./screens/Loading";
@@ -39,19 +43,35 @@ const Navigator = () => {
         <AppStack.Navigator headerMode="none">
           {user?.businessType === businessTypes.TRAVEL_AGENCY ? (
             <>
-              <AuthStack.Screen name="HomeScreen" component={HomeScreen} />
+              {/* <AuthStack.Screen name="HomeScreen" component={HomeScreen} /> */}
             </>
           ) : user?.businessType === businessTypes.HOTEL_OWNER ? (
             <>
-              <AuthStack.Screen name="HomeScreen" component={HomeScreen} />
+              {/* <AuthStack.Screen name="HomeScreen" component={HomeScreen} /> */}
             </>
           ) : user?.businessType === businessTypes.SHOP_OWNER ? (
             <>
-              <AuthStack.Screen name="HomeScreen" component={HomeScreen} />
+              <AuthStack.Screen
+                name="HomeScreen"
+                component={ShopOwnerHomeScreen}
+              />
+              <AuthStack.Screen
+                name="ShopDetailsScreen"
+                component={ShopDetailsScreen}
+              />
+              <AuthStack.Screen
+                name="AddShopScreen"
+                component={AddShopScreen}
+              />
+              <AuthStack.Screen
+                name="EditShopScreen"
+                component={EditShopScreen}
+              />
             </>
           ) : (
             <LoadingScreen />
           )}
+          <AuthStack.Screen name="ReviewsScreen" component={ReviewsScreen} />
         </AppStack.Navigator>
       ) : (
         <LoadingScreen />
